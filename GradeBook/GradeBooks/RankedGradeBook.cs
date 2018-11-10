@@ -18,7 +18,7 @@ namespace GradeBook.GradeBooks
                 throw new InvalidOperationException("Ranked-grading requires a minimum of 5 students to work");
             }
 
-            var percentile = Students.Where(x => x.AverageGrade <= averageGrade).Count() / System.Convert.ToDouble(Students.Count);
+            var percentile = Students.Where(x => x.AverageGrade < averageGrade).Count() / System.Convert.ToDouble(Students.Count);
 
             if (percentile >= 0.8)
             {
